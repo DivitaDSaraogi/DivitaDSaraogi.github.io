@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Divita Saraogi</title>
+  <title>Divita Saraogi | AI/ML Engineer</title>
+
+  <meta name="description"
+    content="Divita Saraogi - AI/ML Engineer, Data Scientist and IIT Bombay PhD specializing in Machine Learning, AI and Scientific Computing.">
+
   <link rel="icon" type="image/png" href="favicon.png">
-  <meta name="description" content="Divita Saraogi - AI/ML Engineer, Data Scientist, IIT Bombay PhD">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <style>
 
@@ -15,59 +25,78 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: white;
-      color: #1e293b;
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
       line-height: 1.7;
     }
 
     header {
-      padding: 30px 80px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e2e8f0;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #e2e8f0;
+
+      padding: 20px 80px;
     }
 
     .logo {
-      font-size: 28px;
-      font-weight: bold;
-      color: #0f172a;
+      font-size: 26px;
+      font-weight: 700;
+      color: #2563eb;
     }
 
     nav a {
-      margin-left: 25px;
       text-decoration: none;
-      color: #475569;
+      margin-left: 25px;
+      color: #334155;
       font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
     }
 
     .hero {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 80px;
-      min-height: 80vh;
+
+      padding: 100px 80px;
+      min-height: 90vh;
+
+      background:
+        radial-gradient(circle at top right, rgba(59,130,246,0.08), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(139,92,246,0.08), transparent 30%);
     }
 
     .hero-text {
-      max-width: 650px;
+      max-width: 700px;
     }
 
     .hero-text h1 {
-      font-size: 64px;
+      font-size: 72px;
+      line-height: 1.1;
       margin-bottom: 20px;
       color: #0f172a;
     }
 
     .hero-text h2 {
       font-size: 28px;
-      font-weight: normal;
-      color: #3b82f6;
-      margin-bottom: 30px;
+      color: #2563eb;
+      font-weight: 500;
+      margin-bottom: 25px;
     }
 
     .hero-text p {
@@ -76,91 +105,151 @@
       margin-bottom: 40px;
     }
 
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
     .btn {
       display: inline-block;
-      padding: 14px 30px;
-      background: #3b82f6;
-      color: white;
+      padding: 14px 28px;
+      border-radius: 12px;
       text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .primary-btn {
+      background: #2563eb;
+      color: white;
+    }
+
+    .primary-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .secondary-btn {
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
+      background: white;
+    }
+
+    .secondary-btn:hover {
+      border-color: #2563eb;
+      color: #2563eb;
     }
 
     .hero-image img {
-      width: 320px;
-      height: 320px;
+      width: 360px;
+      height: 360px;
       object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+      border-radius: 30px;
+      box-shadow: 0px 15px 40px rgba(0,0,0,0.12);
     }
 
     .section {
-      padding: 80px;
-      max-width: 1200px;
+      padding: 100px 80px;
+      max-width: 1300px;
       margin: auto;
     }
 
-    .section h2 {
-      font-size: 40px;
-      margin-bottom: 30px;
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 40px;
       color: #0f172a;
     }
 
     .card {
-      background: #f8fafc;
+      background: white;
       padding: 35px;
-      border-radius: 20px;
+      border-radius: 24px;
       margin-bottom: 30px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0px 5px 20px rgba(0,0,0,0.03);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #2563eb;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-box {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
       border: 1px solid #e2e8f0;
     }
 
-    ul {
-      padding-left: 20px;
+    .fun-box {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      text-align: center;
+      border-radius: 30px;
+      padding: 60px 30px;
+      margin-top: 40px;
     }
 
-    li {
-      margin-bottom: 12px;
+    .fun-box h3 {
+      font-size: 34px;
+      margin-bottom: 20px;
     }
 
     footer {
       text-align: center;
-      padding: 40px;
+      padding: 50px;
       color: #64748b;
       border-top: 1px solid #e2e8f0;
-      margin-top: 50px;
+      margin-top: 80px;
     }
 
-    @media(max-width: 900px) {
+    @media(max-width: 1000px) {
+
+      header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+      }
 
       .hero {
         flex-direction: column-reverse;
         text-align: center;
-        padding: 40px 20px;
+        padding: 60px 20px;
       }
 
       .hero-image img {
-        width: 220px;
-        height: 220px;
+        width: 240px;
+        height: 240px;
         margin-bottom: 40px;
       }
 
       .hero-text h1 {
-        font-size: 42px;
-      }
-
-      header {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
+        font-size: 48px;
       }
 
       .section {
-        padding: 40px 20px;
+        padding: 60px 20px;
       }
 
+      .button-group {
+        justify-content: center;
+      }
     }
 
   </style>
+
 </head>
 
 <body>
@@ -168,11 +257,12 @@
   <header>
 
     <div class="logo">
-      Divita Saraogi
+      DS
     </div>
 
     <nav>
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
@@ -187,22 +277,36 @@
       <h1>Divita Saraogi</h1>
 
       <h2>
-        AI/ML Engineer | Data Scientist | PhD IIT Bombay
+        AI/ML Engineer • Data Scientist • IIT Bombay PhD
       </h2>
 
       <p>
-        AI/ML Engineer with a PhD from IIT Bombay specializing in
-        Machine Learning, Scientific Computing, and Large-Scale Data Analysis.
+        Building intelligent systems using Machine Learning, Deep Learning,
+        AI-driven analytics, spectral data processing, and scientific computing.
       </p>
 
-      <a class="btn" href="https://github.com/DivitaDSaraogi">
-  View GitHub
-   <a class="btn"
-   href="https://www.linkedin.com/in/divita-saraogi/"
-   target="_blank"
-   rel="noopener noreferrer">
-   LinkedIn
-</a>
+      <div class="button-group">
+
+        <a class="btn primary-btn"
+          href="Resume.pdf"
+          target="_blank">
+          Download Resume
+        </a>
+
+        <a class="btn secondary-btn"
+          href="https://github.com/DivitaDSaraogi"
+          target="_blank">
+          GitHub
+        </a>
+
+        <a class="btn secondary-btn"
+          href="https://www.linkedin.com/in/divita-saraogi/"
+          target="_blank">
+          LinkedIn
+        </a>
+
+      </div>
+
     </div>
 
     <div class="hero-image">
@@ -215,19 +319,57 @@
 
   <section class="section" id="about">
 
-    <h2>About Me</h2>
+    <h2 class="section-title">About Me</h2>
 
     <div class="card">
 
       <p>
-        I am a Data Scientist and Astrophysicist with expertise in
-        Machine Learning, Artificial Intelligence, and High-Energy Astrophysics.
+        Results-driven Data Scientist with 5+ years of experience in
+        Machine Learning, AI, Predictive Analytics, and Statistical Modeling
+        across scientific and industrial domains.
 
-        My PhD research at IIT Bombay focused on Gamma Ray Burst localization
-        and polarization studies using AstroSat and Fermi satellite data.
+        Currently working at Picarro Technologies on AI-driven gas spectral
+        analysis and compound fingerprinting using Python, PyTorch,
+        Deep Learning, and AWS infrastructure.
+      </p>
 
-        I have experience in scientific research, data analytics,
-        machine learning, and large-scale data processing.
+    </div>
+
+  </section>
+
+  <section class="section" id="experience">
+
+    <h2 class="section-title">Experience</h2>
+
+    <div class="card">
+
+      <h3>Data Scientist – AI Team | Picarro Technologies</h3>
+
+      <p>
+        Working on AI-driven analysis of gas spectral data for compound
+        speciation, fingerprinting, and analytical ML workflows.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Data Scientist | Tosscall Services</h3>
+
+      <p>
+        Built ML models, customer prediction systems,
+        Power BI dashboards, and large-scale business analytics solutions.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Research Scholar (PhD) | IIT Bombay</h3>
+
+      <p>
+        Developed real-time Gamma-Ray Burst localization pipelines using
+        AstroSat data with probabilistic modeling and scientific computing.
       </p>
 
     </div>
@@ -236,75 +378,83 @@
 
   <section class="section" id="skills">
 
-    <h2>Skills</h2>
+    <h2 class="section-title">Tech Stack</h2>
 
-    <div class="card">
+    <div class="skills-grid">
 
-      <ul>
-        <li>Python</li>
-        <li>Machine Learning & AI</li>
-        <li>Deep Learning</li>
-        <li>SQL & Data Analysis</li>
-        <li>Power BI & Visualization</li>
-        <li>Astrophysics Research</li>
-        <li>Data Engineering</li>
-      </ul>
+      <div class="skill-box">
+        <h3>Programming</h3>
+        <p>Python • SQL • R • Pandas • NumPy</p>
+      </div>
 
-      <section class="section">
+      <div class="skill-box">
+        <h3>AI & Machine Learning</h3>
+        <p>PyTorch • TensorFlow • Scikit-Learn • Deep Learning</p>
+      </div>
 
-  <h2>Tech Stack</h2>
+      <div class="skill-box">
+        <h3>Visualization</h3>
+        <p>Power BI • Tableau • Matplotlib • Seaborn</p>
+      </div>
 
-  <div class="card">
+      <div class="skill-box">
+        <h3>Cloud & Tools</h3>
+        <p>AWS • Docker • Git • GitHub • Jupyter</p>
+      </div>
 
-    <p>
-      Python • SQL • Machine Learning • Deep Learning •
-      TensorFlow • PyTorch • Power BI • Pandas • Scikit-learn • AWS
-    </p>
-
-  </div>
-
-</section>
-      
-      <section class="section" id="experience">
-
-  <h2>Experience</h2>
-
-  <div class="card">
-
-    <h3> Associate Data Scientist - PICARRO </h3>
-    <p>
-      Working on Machine Learning, AI systems, data analytics,
-      and large-scale data processing.
-    </p>
-
-    <br>
-
-    <h3>Research Associate — IIT Bombay</h3>
-    <p>
-      Worked on Gamma Ray Burst localization and polarization studies
-      using AstroSat and Fermi data.
-    </p>
-
-  </div>
-
-</section>
     </div>
 
   </section>
 
   <section class="section" id="projects">
 
-    <h2>Projects</h2>
+    <h2 class="section-title">Featured Projects</h2>
 
     <div class="card">
 
-      <ul>
-        <li>Gamma Ray Burst Localization Pipeline</li>
-        <li>GRB Polarization Studies using AstroSat</li>
-        <li>Customer Churn Prediction using Machine Learning</li>
-        <li>AI & Data Analytics Dashboards</li>
-        <li>Large-scale Scientific Data Processing</li>
-      </ul>
+      <h3>AI-Based Gas Spectral Fingerprinting</h3>
+
+      <p>
+        Developed ML-based compound identification and speciation
+        systems for gas spectral datasets.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Customer Return Prediction</h3>
+
+      <p>
+        Built predictive ML models and business intelligence dashboards
+        for customer analytics.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Real-Time GRB Localization Pipeline</h3>
+
+      <p>
+        Developed automated astrophysics pipelines for Gamma-Ray Burst
+        localization using AstroSat data.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <div class="fun-box">
+
+      <h3>Fun Fact 🚀</h3>
+
+      <p>
+        I transitioned from studying Gamma-Ray Bursts in deep space
+        to building AI systems for real-world data problems.
+      </p>
 
     </div>
 
@@ -312,44 +462,42 @@
 
   <section class="section" id="contact">
 
-    <h2>Contact</h2>
+    <h2 class="section-title">Contact</h2>
 
     <div class="card">
-       <p>
-  LinkedIn:
-  <a href="https://www.linkedin.com/in/divita-saraogi/" target="_blank">
-    linkedin.com/in/divita-saraogi
-  </a>
-</p>
-      <p>
-        Email:
-        <a href="mailto:divitadsaraogi@gmail.com">
-          divitadsaraogi@gmail.com
+
+      <p><strong>Email:</strong> divitadsaraogi@gmail.com</p>
+
+      <br>
+
+      <p><strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/divita-saraogi/" target="_blank">
+          linkedin.com/in/divita-saraogi
         </a>
       </p>
 
       <br>
 
-      <p>
-        GitHub:
-        <a href="https://github.com/DivitaDSaraogi">
+      <p><strong>GitHub:</strong>
+        <a href="https://github.com/DivitaDSaraogi" target="_blank">
           github.com/DivitaDSaraogi
         </a>
       </p>
 
+      <br>
+
+      <p><strong>Location:</strong> Bengaluru, India</p>
+
     </div>
 
   </section>
-<footer>
 
-  © 2026 Divita Saraogi
+  <footer>
 
-  <br><br>
+    © 2026 Divita Saraogi • AI/ML Engineer • Data Scientist • IIT Bombay PhD
 
-  AI/ML Engineer • Data Scientist • IIT Bombay PhD
-
-</footer>
-  <link rel="icon" href="favicon.ico">
+  </footer>
 
 </body>
+
 </html>
