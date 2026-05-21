@@ -6,54 +6,297 @@
   <title>Divita Saraogi</title>
 
   <style>
-    body {
+
+    * {
       margin: 0;
-      background: #0f172a;
-      color: white;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    .container {
-      padding-top: 120px;
-    }
-
-    h1 {
-      font-size: 60px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      color: #94a3b8;
-      font-weight: normal;
-    }
-
-    p {
-      max-width: 700px;
-      margin: auto;
+      background: white;
+      color: #1e293b;
       line-height: 1.7;
-      color: #cbd5e1;
-      padding: 20px;
     }
+
+    header {
+      padding: 30px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #0f172a;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #475569;
+      font-weight: 500;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px;
+      min-height: 80vh;
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .hero-text h1 {
+      font-size: 64px;
+      margin-bottom: 20px;
+      color: #0f172a;
+    }
+
+    .hero-text h2 {
+      font-size: 28px;
+      font-weight: normal;
+      color: #3b82f6;
+      margin-bottom: 30px;
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      color: #475569;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #3b82f6;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .hero-image img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .section {
+      padding: 80px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 40px;
+      margin-bottom: 30px;
+      color: #0f172a;
+    }
+
+    .card {
+      background: #f8fafc;
+      padding: 35px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      border: 1px solid #e2e8f0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #64748b;
+      border-top: 1px solid #e2e8f0;
+      margin-top: 50px;
+    }
+
+    @media(max-width: 900px) {
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .hero-image img {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 40px;
+      }
+
+      .hero-text h1 {
+        font-size: 42px;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .section {
+        padding: 40px 20px;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
 
-<div class="container">
+  <header>
 
-  <h1>Divita Saraogi</h1>
+    <div class="logo">
+      Divita Saraogi
+    </div>
 
-  <h2>
-    Data Scientist | AI Enthusiast | Astrophysicist
-  </h2>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <p>
-    PhD from IIT Bombay specializing in Gamma Ray Bursts,
-    Artificial Intelligence, and Data Science.
-  </p>
+  </header>
 
-</div>
+  <section class="hero">
+
+    <div class="hero-text">
+
+      <h1>Divita Saraogi</h1>
+
+      <h2>
+        Data Scientist | AI Enthusiast | Astrophysicist
+      </h2>
+
+      <p>
+        PhD from IIT Bombay specializing in Gamma Ray Bursts,
+        Artificial Intelligence, Machine Learning, and Data Science.
+        Passionate about building intelligent systems and solving
+        real-world problems through data.
+      </p>
+
+      <a class="btn" href="https://github.com/DivitaDSaraogi">
+        View GitHub
+      </a>
+
+    </div>
+
+    <div class="hero-image">
+
+      <img src="profile.jpg" alt="Divita Saraogi">
+
+    </div>
+
+  </section>
+
+  <section class="section" id="about">
+
+    <h2>About Me</h2>
+
+    <div class="card">
+
+      <p>
+        I am a Data Scientist and Astrophysicist with expertise in
+        Machine Learning, Artificial Intelligence, and High-Energy Astrophysics.
+
+        My PhD research at IIT Bombay focused on Gamma Ray Burst localization
+        and polarization studies using AstroSat and Fermi satellite data.
+
+        I have experience in scientific research, data analytics,
+        machine learning, and large-scale data processing.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="section" id="skills">
+
+    <h2>Skills</h2>
+
+    <div class="card">
+
+      <ul>
+        <li>Python</li>
+        <li>Machine Learning & AI</li>
+        <li>Deep Learning</li>
+        <li>SQL & Data Analysis</li>
+        <li>Power BI & Visualization</li>
+        <li>Astrophysics Research</li>
+        <li>Data Engineering</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <section class="section" id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="card">
+
+      <ul>
+        <li>Gamma Ray Burst Localization Pipeline</li>
+        <li>GRB Polarization Studies using AstroSat</li>
+        <li>Customer Churn Prediction using Machine Learning</li>
+        <li>AI & Data Analytics Dashboards</li>
+        <li>Large-scale Scientific Data Processing</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <section class="section" id="contact">
+
+    <h2>Contact</h2>
+
+    <div class="card">
+
+      <p>
+        Email:
+        <a href="mailto:divitadsaraogi@gmail.com">
+          divitadsaraogi@gmail.com
+        </a>
+      </p>
+
+      <br>
+
+      <p>
+        GitHub:
+        <a href="https://github.com/DivitaDSaraogi">
+          github.com/DivitaDSaraogi
+        </a>
+      </p>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    © 2026 Divita Saraogi • Personal Portfolio Website
+
+  </footer>
 
 </body>
 </html>
